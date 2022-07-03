@@ -1,9 +1,14 @@
 {
-  "name": "a",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "dev": "nodemon index.js"
+  },
+  "name": "theisert",
+  "description": "Bot de Discord",
+  "engines": {
+    "node": "16.x"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +37,5 @@
   "bugs": {
     "url": "https://github.com/TheIsert/dashboard/issues"
   },
-  "homepage": "https://github.com/TheIsert/dashboard#readme",
-  "description": ""
+  "homepage": "https://github.com/TheIsert/dashboard#readme"
 }
