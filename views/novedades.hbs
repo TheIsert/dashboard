@@ -1,0 +1,237 @@
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body style="background-image: url(https://i.imgur.com/axnP93g.png)">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">TheIsert</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarColor02"
+          aria-controls="navbarColor02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Inicio
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#fun">Funciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/votar">Votar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/comandos">Comandos</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="/actualizaciones"
+              >Actualizaciones</a>
+            </li>
+            <li class="nav-item">
+              {{#if user}}
+                <a href="/dash" class="btn btn-outline-secondary"><i
+                    class="bi bi-arrow-bar-right"
+                  > Ir a la Dashboard</i>
+                </a>
+              {{else}}
+                <a href="/login" class="btn btn-outline-secondary"><i
+                    class="bi bi-arrow-bar-right"
+                  ></i>
+                  Iniciar sesión</a>
+              {{/if}}
+            </li>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!---............................................................................................-->
+    <div class="jumbotron text-center bg-dark p-4">
+      <img
+        src="https://i.imgur.com/ARInGZf.png"
+        class="rounded-circle mx-auto d-block"
+        width="120px"
+        height="120px"
+      />
+      <h1 class="display-5">Actualizaciones</h1>
+      <p class="p-1 h5 text-white-50">Lista de actualizaciones.</p>
+    </div>
+    <!---............................................................................................-->
+    <div class="container text-center position relative p-3">
+      <div class="row">
+        <div class="card rounded-3 mx-auto d-block" style="width: 70rem">
+          <a
+            href=""
+            class="btn btn-secondary pt-4 px-4 m-3 col-sm-9 text-start"
+          ><h1 class="badge bg-dark p-2">2/7/2022</h1>
+            Cambios en el funcionamiento del bot.
+            <hr />
+          </a>
+          <a
+            href=""
+            class="btn btn-secondary pt-4 px-4 m-3 col-sm-9 text-start"
+          ><h1 class="badge bg-dark p-2">2/7/2022</h1>
+            Se agregó el Sistema de Boosts.
+            <hr />
+          </a>
+          <a
+            href=""
+            class="btn btn-secondary pt-4 px-4 m-3 col-sm-9 text-start"
+          ><h1 class="badge bg-dark p-2">30/6/2022</h1>
+            Actualización del Sistema de Bienvenidas y despedidas.
+            <hr />
+          </a>
+          <a
+            href=""
+            class="btn btn-secondary pt-4 px-4 m-3 col-sm-9 text-start"
+          ><h1 class="badge bg-dark p-2">25/6/2022</h1>
+            Actualización de los embed, shardInfo y mensaje de ayuda al entrar
+            en un servidor.
+            <hr />
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!---............................................................................................-->
+  <footer class="bg-dark text-white text-center text-lg-start">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+
+          <h5 class="text-uppercase"><img
+              src="https://i.imgur.com/ARInGZf.png"
+              class="rounded-circle"
+              width="60px"
+              height="60px"
+            />
+            TheIsert</h5>
+          <p>
+            El mejor bot personalizable y con multifunciones.
+          </p>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-center">
+          <h5 class="text-uppercase">Enlaces</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a
+                href="#cont"
+                class="text-white text-decoration-none"
+              >Contacto</a>
+            </li>
+            <li>
+              <a
+                href="#fun"
+                class="text-white text-decoration-none"
+              >Características</a>
+            </li>
+            <li>
+              <a
+                href="https://discord.gg/D8HXFR8tpK"
+                class="text-white text-decoration-none"
+              >Servidor de Soporte</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-center" id="cont">
+          <h5 class="text-uppercase mb-0">Contacto</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a
+                href="#"
+                class="text-white text-decoration-none"
+              >francoaasemborn@gmail.com</a>
+            </li>
+            <li>
+              <a href="#" class="text-white text-decoration-none">+40,000
+                Usuarios usando el bot</a>
+            </li>
+            <li>
+              <a href="#" class="text-white text-decoration-none">+30 servidores</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center">
+      <a
+        class="btn btn-outline-light btn-floating m-1 rounded-circle"
+        href="https://www.instagram.com/franasemb/"
+        role="button"
+      ><i class="bi bi-instagram"></i></a>
+      <a
+        class="btn btn-outline-light btn-floating m-1 rounded-circle"
+        href="https://twitter.com/Thelsert"
+        role="button"
+      ><i class="bi bi-twitter"></i></a>
+      <a
+        class="btn btn-outline-light btn-floating m-1 rounded-circle"
+        href="https://www.twitch.tv/thelsert"
+        role="button"
+      ><i class="bi bi-twitch"></i></a>
+      <a
+        class="btn btn-outline-light btn-floating m-1 rounded-circle"
+        href="https://discord.gg/D8HXFR8tpK"
+        role="button"
+      ><i class="bi bi-discord"></i></a>
+      <a
+        class="btn btn-outline-light btn-floating m-1 rounded-circle"
+        href="https://github.com/TheIsert"
+        role="button"
+      ><i class="bi bi-github"></i></a>
+    </div>
+    <div class="text-center p-3">
+
+      © 2021-2022 TheIsert
+
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"
+  ></script>
+
+</html>

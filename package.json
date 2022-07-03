@@ -1,0 +1,37 @@
+{
+  "name": "a",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "bootstrap-icons": "^1.8.3",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "fs": "^0.0.1-security",
+    "got": "^11.8.3",
+    "mongoose": "^6.4.2",
+    "node-fetch": "^3.2.0",
+    "nodemon": "^2.0.18",
+    "os": "^0.1.2",
+    "passport": "^0.6.0",
+    "passport-discord": "^0.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheIsert/dashboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheIsert/dashboard/issues"
+  },
+  "homepage": "https://github.com/TheIsert/dashboard#readme",
+  "description": ""
+}
