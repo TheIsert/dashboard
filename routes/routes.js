@@ -5,22 +5,31 @@ const { djs_user } = require("../util/api/djs_guild");
 const router = Router();
 
 router.get("/", async (req, res) => {
-  //const userDjs = await djs_user(req.user.discordId);
+  const userDjs = await djs_user(req.user.discordId);
   res.render("home", {
     auth: auth,
-    //userDjs: userDjs,
+    userDjs: userDjs,
   });
 });
 
-router.get("/comandos", (req, res) => {
-  res.render("comandos");
+router.get("/comandos", async (req, res) => {
+  const userDjs = await djs_user(req.user.discordId);
+  res.render("comandos",{
+    userDjs: userDjs,
+  });
 });
 
-router.get("/actualizaciones", (req, res) => {
-  res.render("novedades");
+router.get("/actualizaciones",async (req, res) => {
+  const userDjs = await djs_user(req.user.discordId);
+  res.render("novedades",{
+    userDjs: userDjs,
+  });
 });
-router.get("/votar", (req, res) => {
-  res.render("votar");
+router.get("/votar", async (req, res) => {
+  const userDjs = await djs_user(req.user.discordId);
+  res.render("votar",{
+    userDjs: userDjs,
+  });
 });
 
 router.get(
