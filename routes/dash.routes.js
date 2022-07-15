@@ -160,7 +160,7 @@ router.get("/dash/:id/tickets", auth, async (req, res) => {
           channelNameTickets: "Selecciona un canal...",
           rolNameSoporte: "Selecciona un rol...",
           channelNameLogs: "Selecciona un canal...",
-          userDjs: userDjs,
+              userDjs: userDjs,
         });
       }
     }
