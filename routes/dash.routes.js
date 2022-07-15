@@ -7,33 +7,44 @@ const {
   djs_guild_users,
   djs_guild_roles,
   djs_getChannel,
+  djs_user,
 } = require("../util/api/djs_guild");
 const ticketModel = require("../util/models/tickets");
 const { djs_message } = require("../util/api/djs_message");
 const router = Router();
 
 router.get("/dash/logout", auth, function (req, res, next) {
-  if (req.user) req.logout(function(err) {
-    if (err) { return next(err); }
-    res.redirect('/');
-  });
-
+  if (req.user)
+    req.logout(function (err) {
+      if (err) {
+        return next(err);
+      }
+      res.redirect("/");
+    });
 });
 
 router.get("/dash", auth, async (req, res) => {
-  let servidores = [];
-  let guilds = await djs_guilds();
+  let id = req.params.id;
 
-  for (const key in guilds) {
+  const userDjs = await djs_user(req.user.discordId);
+
+  let servidores = [];
+
+  const userGuilds = req.user
+    .get("guilds")
+    .filter((guild) => (guild.permissions & 0x20) === 0x20);
+
+  for (const key in userGuilds) {
     servidores.push({
-      id: guilds[key].id,
-      name: guilds[key].name,
-      icon: guilds[key].icon,
+      id: userGuilds[key].id,
+      name: userGuilds[key].name,
+      icon: userGuilds[key].icon,
     });
   }
 
   res.render("dash", {
     user: req.user,
+    userDjs: userDjs,
     servidores,
   });
 });
@@ -43,6 +54,7 @@ router.get("/dash/:id", auth, async (req, res) => {
   let servidor = await djs_guild(id);
   const channels = await djs_guild_channels(id);
   const users = await djs_guild_users(id);
+  const userDjs = await djs_user(req.user.discordId);
 
   res.render("servidor", {
     user: req.user,
@@ -54,23 +66,27 @@ router.get("/dash/:id", auth, async (req, res) => {
     sticker: servidor.stickers.length,
     emojis: servidor.emojis.length,
     users: users.approximate_member_count,
+    userDjs: userDjs,
   });
 });
 
 router.get("/dash/:id/bienvenidas", auth, async (req, res) => {
   let id = req.params.id;
+  const userDjs = await djs_user(req.user.discordId);
   let servidor = await djs_guild(id);
   res.render("bienvenidas", {
     user: req.user,
     servidor,
     servidorID: servidor.id,
+    userDjs: userDjs,
   });
 });
 
 router.get("/dash/:id/tickets", auth, async (req, res) => {
   let id = req.params.id;
   let servidor = await djs_guild(id);
-
+  const userDjs = await djs_user(req.user.discordId);
+  
   let servidores = [];
   let guilds = await djs_guilds();
 
@@ -92,6 +108,7 @@ router.get("/dash/:id/tickets", auth, async (req, res) => {
       id: guilds[key].id,
       name: guilds[key].name,
       icon: guilds[key].icon,
+      
     });
   }
 
@@ -116,6 +133,7 @@ router.get("/dash/:id/tickets", auth, async (req, res) => {
             channelNameTickets: channelTickets.name,
             rolNameSoporte: rolSoporte,
             channelNameLogs: channelLogs.name,
+            userDjs: userDjs,
           });
         } else {
           res.render("tickets", {
@@ -128,6 +146,7 @@ router.get("/dash/:id/tickets", auth, async (req, res) => {
             channelNameTickets: channelTickets.name,
             rolNameSoporte: rolSoporte,
             channelNameLogs: "Selecciona un canal...",
+            userDjs: userDjs,
           });
         }
       } else {
@@ -141,6 +160,7 @@ router.get("/dash/:id/tickets", auth, async (req, res) => {
           channelNameTickets: "Selecciona un canal...",
           rolNameSoporte: "Selecciona un rol...",
           channelNameLogs: "Selecciona un canal...",
+          userDjs: userDjs,
         });
       }
     }

@@ -45,13 +45,46 @@
               <a class="nav-link" href="/actualizaciones">Actualizaciones</a>
             </li>
             <li class="nav-item">
-              <a href="/dash/logout" class="btn btn-outline-secondary">Cerrar Sesión</a>
+              <div class="dropdown">
+                <a
+                  class="btn btn-outline-secondary dropdown-toggle"
+                  href="#"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+
+                  <img
+                    src="https://cdn.discordapp.com/avatars/{{userDjs.id}}/{{userDjs.avatar}}.png"
+                    class="rounded-circle me-1"
+                    width="27px"
+                    height="27px"
+                  />
+                  {{user.username}}
+                </a>
+
+                <ul
+                  class="dropdown-menu dropdown-menu-end mt-2"
+                  aria-labelledby="dropdownMenuLink"
+                >
+                  <li><a class="dropdown-item" href="/"><i
+                        class="bi bi-house-door-fill"
+                      ></i>
+                      Inicio</a></li>
+                  <li><a class="dropdown-item" href="/dash/logout"><i
+                        class="bi bi-arrow-bar-right"
+                      ></i>
+                      Cerrar sesión</a></li>
+
+                </ul>
+              </div>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <!---............................................................................................-->
+    <!---...........................................................................................-->
 
     <div class="jumbotron text-center bg-dark p-4">
       {{#if servidor.icon}}
@@ -73,7 +106,7 @@
       <p class="p-1 h5 text-white-50">Configuración del Sistema de Tickets</p>
     </div>
 
-    <!---............................................................................................-->
+    <!---...........................................................................................-->
     <div class="container p-3">
       <div class="row mx-auto d-block" style="width: 70rem">
 
@@ -215,7 +248,7 @@
       </div>
     </div>
   </body>
-  <!---............................................................................................-->
+  <!---...........................................................................................-->
   <script
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
     integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"

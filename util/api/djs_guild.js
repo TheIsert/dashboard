@@ -11,12 +11,16 @@ const opts_guilds = {
     }
 }
 
-const djs_guilds = async () => {
+const djs_guilds = async (user_id) => {
     const res = await fetch(`${discord_api}/users/@me/guilds`, opts_guilds)
     const body = await res.body
     return JSON.parse(body)
 }
-
+const djs_user = async (user_id) => {
+    const res = await fetch(`${discord_api}/users/${user_id}`, opts_guilds)
+    const body = await res.body
+    return JSON.parse(body)
+}
 const djs_guild = async (guild_id) => {
     try {
         const res = await fetch(`${discord_api}/guilds/${guild_id}`, opts_guilds)
@@ -73,5 +77,6 @@ module.exports = {
     djs_guild_channels,
     djs_guild_users,
     djs_guild_roles,
-    djs_getChannel
+    djs_getChannel,
+    djs_user
 }
