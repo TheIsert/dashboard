@@ -5,10 +5,10 @@ const { djs_user } = require("../util/api/djs_guild");
 const router = Router();
 
 router.get("/", async (req, res) => {
-  const userDjs = await djs_user(req.user.discordId);
+  //const userDjs = await djs_user(req.user.discordId);
   res.render("home", {
     auth: auth,
-    userDjs: userDjs,
+    //userDjs: userDjs,
   });
 });
 

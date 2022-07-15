@@ -12,7 +12,7 @@ const path = require("path");
 const app = express();
 
 app
-  .set("port", process.env.PORT || 5000)
+  .set("port", process.env.PORT || 3000)
   .use(express.static("public"))
   .use(express.urlencoded({ extended: true }))
   .use(
